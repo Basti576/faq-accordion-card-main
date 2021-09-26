@@ -1,0 +1,305 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Kumbh Sans', sans-serif;
+    height: 100vh;
+    width:100vw;
+    overflow:hidden;
+    background-image: linear-gradient(to top, hsl(240, 73%, 65%),  hsl(273, 75%, 66%));
+    font-size: 12px;
+}
+
+.container{
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img-box-desktop{
+    animation: plant 4s cubic-bezier(0,1.61,.8,1.04) infinite alternate;
+}
+
+@keyframes plant{
+    from{
+        transform: translate(-50%, 100%);
+        -webkit-filter: drop-shadow(12px 12px 25px rgba(255, 255, 255, 0.719));
+       
+    }
+
+    to{
+      
+        transform: translate(-50%, 50%);
+        -webkit-filter: drop-shadow(12px 12px 25px rgba(255, 255, 255, 0));
+      
+    }
+}
+
+
+/*CARD CONTAINER*/
+
+.card-container{
+    display:grid;
+    grid-template-rows:1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left-side right-side";
+    justify-content: center;
+    width: 1200px;
+    margin: auto;
+    height:auto;
+    min-height: 65%;
+    padding:2rem 2rem 0 0;
+    margin: 0 2rem 0 2rem;
+    background-color: rebeccapurple;
+    border-radius: 1rem;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.35); 
+    box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.35);
+
+}
+
+
+
+
+
+/*---------Card left side styling---------*/
+
+.background-mobile{
+    display: none;
+  }
+
+.card-left-side-container{
+    grid-area:left-side;
+    height:100%;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+
+}
+
+
+.card-left-side-container img{
+    position: absolute;
+    transform: translate(-50%, 100%);
+}
+
+
+.bg-illustration{
+    background-image:url("/images/illustration-woman-online-desktop.svg"), url("/images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat no-repeat;
+    height: 100%;
+    width: 100%;
+    background-position: left -50px top 100px, left 145% top 65%;
+    
+}
+
+/*---------Card right side styling---------*/
+.card-right-side-container{
+    grid-area:right-side;
+    
+}
+
+.card-right-side{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height:100%;
+
+}
+
+.card-right-side h1{
+    font-size:3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+
+.content-row-container{
+   width: 100%;
+   height:100%;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   margin: auto;
+}
+
+.card-right-side-container .content-row{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.content-row .accordion{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border:none;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    background-color: white;
+    color:none;
+    max-width: 100%;
+    font-size: 1rem;
+    color: hsl(237, 12%, 33%);
+
+}
+
+.content-row .accordion:hover{
+    font-weight: bold;
+    color:black;
+    cursor: pointer;
+
+}
+
+.content-panel{
+    margin:1rem 0 2rem 0;
+    max-height: 0;
+    overflow:hidden;
+    max-width: 85%;
+    transition: max-height 0.25s ease-in-out;
+    color:hsl(237, 12%, 33%);
+
+}
+
+.active{
+    display:flex;
+    font-weight: bold;
+    color:hsl(0, 0%, 0%);
+}
+
+.arrowRotate{
+    transform: rotate(180deg);
+}
+
+.bold{
+    font-weight: bold;
+  
+}
+/*---------Footer styling---------*/
+
+    /*Attribution styling*/
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+
+
+
+footer{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+}
+
+
+
+
+
+/*Responsive Design*/
+
+@media only screen and (max-width:950px){
+
+    body{
+        overflow-y:scroll;
+        height:auto;
+    }
+  
+    .card-container{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+        "left-side" 
+        "right-side";
+        height:auto;
+        margin-top:2rem;
+        margin-bottom:2rem;
+        max-width: 80%;
+        padding:2rem;
+    }
+
+
+
+
+        .content-row .accordion{
+            max-width:100%;
+            width:100%;
+            margin:auto;
+
+        }
+
+    
+        .content-panel{
+            margin: 1rem 0 2rem 0;
+            max-width: 100%;
+        }
+       
+
+
+    
+/*---------Card Left side styling---------*/
+    .card-left-side-container{
+        grid-area: left-side;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      
+       
+    }
+
+    .card-left-side-container img{
+        position: relative;
+       transform: unset;
+          
+       }
+
+       .img-box-desktop{
+        display: none;
+    }
+   
+   .bg-illustration{
+   display: none;
+       
+   }
+   
+
+
+ .background-mobile{
+     display: flex;
+     height: 25%;
+     width: 65%;
+    background-image: url("/images/illustration-woman-online-mobile.svg"), url("/images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat no-repeat;
+    background-position:left 50% top 45%, left 49% top 100%;
+    background-size: contain contain;
+    transform: translateY(-35%);
+    position: absolute;
+ }
+
+
+
+/*---------Card right side styling---------*/
+.card-right-side h1{
+    text-align: center;
+    margin: 3rem auto 1rem auto;
+}
+
+
+/*---------Footer styling---------*/
+
+    footer{
+        position:relative;
+        bottom:0;
+    }
+
+}
